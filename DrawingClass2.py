@@ -82,10 +82,8 @@ class HandDrawingApp:
         mode = ""
         if finger_up[1] and finger_up[2]:
             mode = "selection"
-        elif finger_up[1]:
-            mode = "drawing"
         else:
-            mode = ""
+            mode = "drawing"
         return mode
 
     def finger_position(self, hands):
@@ -188,6 +186,7 @@ class HandDrawingApp:
             if hands:
                 cv2.rectangle(img, (0, 115), (self.target_width, 100),
                               self.brushes[self.brush_index]["color"], cv2.FILLED)
+                self.clear_all(hands,img)
                 if self.is_selection_mode(hands) == "drawing":
                     self.draw(hands,img)
                     self.first_time = False
@@ -196,7 +195,6 @@ class HandDrawingApp:
                     self.first_time = True
                 else:
                     self.first_time = True
-                self.clear_all(hands,img)
             img = self.masking(img)
 
             # Overlay header
