@@ -3,15 +3,15 @@ Bu projemizde parmaklarımızla kamera üzerinde resi çizeceğiz.
 
 ## Oyunun nasıl oynanacağı
 - Kameraya elinizi gösterdiğiniz zaman
-  - iki parmak seçim
+  - iki parmak seçim,
     parmağınızı yukarıdaki fırçalara ve silgiye götürerek seçim yapabilirsiniz
   - tek parmak çizim
   - 5 parmak ise tüm çizimi sil
 
-> Oyunu ister deneyap kartın kamerası ile ister de kendi bilgisayarınızı kamerası ile oynayabilirsiniz. Bunun için DrawingClass.py kodunun sonundaki parametreyi değiştirmeniz gerekmektedir.
+> Oyunu ister deneyap kartın kamerası ile ister de kendi bilgisayarınızı kamerası ile oynayabilirsiniz. Bunun için main.py kodunun sonundaki parametreyi değiştirmeniz gerekmektedir.
 ```python
 if __name__ == "__main__":
-    app = PingPong(source="camera") # source="sock" , "camera"
+    app = HandDrawingApp(source="camera") # source="sock" , "camera"
     app.run()
 ```
 
